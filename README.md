@@ -38,10 +38,11 @@ At the most basic, this library adds a `pdf` method to the express response obje
 
 | property | type | description |
 |----------|--------|-----------|
-| disposition | 'inline' / 'attachment' | Should the file render inline within the browser or download as an attachment? |
-| filename | string | The filename for the generated file (including extension). |
 | browserOptions | LaunchOptions | The Puppeteer launch option configuration. See https://pptr.dev/#?product=Puppeteer&version=v1.19.0&show=api-puppeteerlaunchoptions for a full list. |
+| disposition | 'inline' / 'attachment' | Should the file render inline within the browser or download as an attachment? |
 | errorBody | any | The value to return whenever a 500 error occurs (PDF fails to generate). This can be a string, JSON, etc. |
+| filename | string | The filename for the generated file (including extension). |
+| pdfOptions | PDFOptions | The Puppeteer PDF option configuration. See https://pptr.dev/#?product=Puppeteer&version=v1.19.0&show=api-pagepdfoptions for a full list. |
 | waitForNetworkIdle | boolean | By default, we assume the PDF document supplied will not contain requests over HTTP (for fastest possible PDF generation). Typically you can embed resources by base64 encoding as data URI's. If you have HTML that pulls assets or other resources over HTTP, set this to `true`. |
 
 ### Example Dockerfile 

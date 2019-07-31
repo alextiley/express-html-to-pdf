@@ -1,10 +1,11 @@
 {
   "name": "express-html-to-pdf",
   "version": "1.0.1",
-  "main": "./src/index.ts",
+  "main": "./lib/index.js",
+  "types" : "./lib/index.d.ts",
   "license": "MIT",
   "scripts": {
-    "build": "rimraf ./lib; tsc --declaration",
+    "build": "rimraf ./lib; tsc",
     "dev": "tsnd --respawn --transpile-only src/index.ts",
     "prepublishOnly": "yarn build",
     "test": "jest"
