@@ -8,11 +8,3 @@ export interface ExpressPDFOptions {
   pdfOptions?: PDFOptions;
   waitForNetworkIdle?: boolean;
 }
-
-declare global {
-  namespace Express {
-    interface Response {
-      pdf: (html: string, options?: ExpressPDFOptions) => void;
-    }
-  }
-}
