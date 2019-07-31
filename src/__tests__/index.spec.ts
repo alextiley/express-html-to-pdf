@@ -3,6 +3,7 @@ import request from 'supertest';
 import pdf from '../index';
 import middleware from '../middleware/pdf';
 import basic from '../__fixtures__/basic';
+import * as helpers from '../helpers/pdf';
 
 const createTestAppWithMiddleware = () => {
   const app = express();
@@ -73,13 +74,16 @@ describe('express-html-to-pdf middleware', () => {
       .expect('Content-Disposition', /(inline|attachment); filename="document.pdf"/);
   });
 
-  // TODO Figure out what's going on here
-  it.skip('should return a 500 status code for unsuccessful PDF requests', async () => {
+  it.only('should return a 500 status code for unsuccessful PDF requests', async () => {
     const app = createTestAppWithMiddleware();
 
+    // Make puppeteer throw when generating PDF
+    jest.spyOn(helpers, 'asPDF').mockImplementation(() => {
+      throw new Error('Some error occurred.');
+    });
+
     app.get('/pdf', (req, res) => {
-      // @ts-ignore
-      res.pdf(false);
+      res.pdf(basic);
     });
 
     await request(app)

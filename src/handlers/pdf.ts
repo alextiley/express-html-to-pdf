@@ -1,3 +1,4 @@
+import debug from 'debug';
 import { Response } from 'express';
 import defaultsDeep from 'lodash/fp/defaultsDeep';
 import { ExpressPDFOptions } from '../types';
@@ -9,8 +10,6 @@ const defaultOptions: ExpressPDFOptions = {
   },
   disableSandbox: false,
   disposition: 'inline',
-  // TODO Set this true based on DEBUG environment variable?
-  enableLogging: false,
   errorBody: 'Unable to generate PDF',
   filename: 'document.pdf',
   pdfOptions: {
@@ -38,10 +37,8 @@ export async function handlePDF(
       .send(pdf);
 
   } catch (err) {
-    if (options.enableLogging) {
-      // TODO Use faster logging library
-      console.error(err.message);
-    }
+    debug(err.message);
+
     this
       .status(500)
       .send(options.errorBody);
