@@ -8,7 +8,6 @@ const defaultOptions: ExpressPDFOptions = {
   browserOptions: {
     args: ['--font-render-hinting=none'],
   },
-  disableSandbox: false,
   disposition: 'inline',
   errorBody: 'Unable to generate PDF',
   filename: 'document.pdf',

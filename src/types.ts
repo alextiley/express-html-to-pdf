@@ -5,7 +5,6 @@ export interface ExpressPDFOptions {
   filename?: string;
   browserOptions?: LaunchOptions;
   errorBody?: any;
-  disableSandbox?: boolean;
   pdfOptions?: PDFOptions;
   waitForNetworkIdle?: boolean;
 }
