@@ -6,8 +6,8 @@
   "license": "MIT",
   "scripts": {
     "build": "rimraf ./lib; tsc",
-    "dev": "tsnd --respawn --transpile-only src/index.ts",
     "prepublishOnly": "yarn build",
+    "start": "tsnd --respawn --transpile-only examples/index.ts",
     "test": "jest"
   },
   "files": [
@@ -21,6 +21,7 @@
     "@types/node": "^12.6.8",
     "@types/puppeteer": "^1.19.0",
     "@types/supertest": "^2.0.8",
+    "express": "^4.17.1",
     "jest": "^24.8.0",
     "rimraf": "^2.6.3",
     "supertest": "^4.0.2",
@@ -30,7 +31,6 @@
   },
   "dependencies": {
     "debug": "^4.1.1",
-    "express": "latest",
     "lodash": "^4.17.15",
     "puppeteer": "^1.19.0"
   }

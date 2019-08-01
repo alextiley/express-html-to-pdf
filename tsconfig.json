@@ -63,6 +63,7 @@
   "exclude": [
     "**/__mocks__/*",
     "**/__fixtures__/*",
-    "**/__tests__/*"
+    "**/__tests__/*",
+    "**/examples/*"
   ]
 }
