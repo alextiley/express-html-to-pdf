@@ -1,8 +1,8 @@
-import debug from 'debug';
 import { Response } from 'express';
 import defaultsDeep from 'lodash/fp/defaultsDeep';
 import { ExpressPDFOptions } from '../types';
-import { asPDF } from '../helpers/pdf';
+import { generatePDF } from '../helpers/pdf';
+import debug from '../helpers/debug';
 
 const defaultOptions: ExpressPDFOptions = {
   browserOptions: {
@@ -24,8 +24,13 @@ export async function handlePDF(
 ) {
   const options = defaultsDeep(defaultOptions, userOptions);
 
+  debug('Configuration successfully parsed:');
+  debug('%O', options);
+
   try {
-    const pdf = await asPDF(html, options);
+    const pdf = await generatePDF(html, options);
+
+    debug(`${options.filename} successfully generated.`);
 
     this
       .set({
@@ -36,7 +41,7 @@ export async function handlePDF(
       .send(pdf);
 
   } catch (err) {
-    debug(err.message);
+    debug('Failed to respond with a PDF document: %O', err);
 
     this
       .status(500)

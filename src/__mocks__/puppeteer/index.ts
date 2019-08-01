@@ -1,5 +1,8 @@
+import noop from 'lodash/fp/noop';
+
 export const page = {
-  goto: jest.fn(),
+  on: jest.fn().mockImplementation(noop),
+  goto: jest.fn().mockImplementation(noop),
   setContent: jest.fn().mockReturnValue(Promise.resolve()),
   pdf: jest.fn().mockReturnValue(Promise.resolve(Buffer.from('PDF'))),
 };
