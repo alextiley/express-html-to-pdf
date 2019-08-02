@@ -23,10 +23,10 @@ export default `
       </style>
     </head>
     <body>
-      <h1 class="typography__heading--main">The quick brown fox jumped over the lazy dog.</h1>
-      <h2 class="typography__heading--sub">The quick brown fox jumped over the lazy dog.</h2>
-      <p class="typography__copy">The quick brown fox jumped over the lazy dog.</p>
-      <small class="typography__copy--small">The quick brown fox jumped over the lazy dog.</small>
+      <h1 class="typography__heading--main">The quick brown fox jumps over the lazy dog.</h1>
+      <h2 class="typography__heading--sub">The five boxing wizards jump quickly.</h2>
+      <p class="typography__copy">The job requires extra pluck and zeal from every young wage earner.</p>
+      <small class="typography__copy--small">Five quacking zephyrs jolt my wax bed.</small>
     </body>
   </html>
 `;
