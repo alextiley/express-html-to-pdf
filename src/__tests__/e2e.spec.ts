@@ -1,5 +1,4 @@
 import express from 'express';
-// @ts-ignore
 import PDFParser from 'pdf2json';
 import puppeteer from 'puppeteer';
 import request from 'supertest';
