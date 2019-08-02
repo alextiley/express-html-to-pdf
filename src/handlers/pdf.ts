@@ -1,6 +1,5 @@
 import { Response } from 'express';
 import defaultsDeep from 'lodash/fp/defaultsDeep';
-import { ExpressPDFOptions } from '../types';
 import { generatePDF } from '../helpers/pdf';
 import debug from '../helpers/debug';
 
@@ -32,7 +31,7 @@ export async function handlePDF(
 
     debug(`${options.filename} successfully generated.`);
 
-    this
+    return this
       .set({
         'Content-Disposition': `${options.disposition}; filename="${options.filename}"`,
         'Content-Type': 'application/pdf',
@@ -43,7 +42,7 @@ export async function handlePDF(
   } catch (err) {
     debug('Failed to respond with a PDF document: %O', err);
 
-    this
+    return this
       .status(500)
       .send(options.errorBody);
   }

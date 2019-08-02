@@ -1,3 +1,4 @@
+/// <reference path="../src/types.d.ts" />
 import express, { Request, Response } from 'express';
 import pdf from '../src';
 import basicMarkup from '../src/__fixtures__/basic';
