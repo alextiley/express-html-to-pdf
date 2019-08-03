@@ -1,3 +1,2 @@
-import pdf from './middleware/pdf';
-
-export default pdf;
+export * from 'puppeteer';
+export { default } from './middleware/pdf';
