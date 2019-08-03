@@ -1,5 +1,6 @@
 import puppeteer from 'puppeteer';
 import { asDataUri } from './encode';
+import { HTMLToPDFOptions } from '../types';
 
 export const generatePDF = async (html: string, options: HTMLToPDFOptions): Promise<Buffer> => {
   return new Promise(async (res, rej) => {

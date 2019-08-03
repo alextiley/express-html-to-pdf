@@ -1,2 +1,2 @@
-export { BrowserOptions, ChromeArgOptions, LayoutDimension, PDFFormat, PDFOptions } from 'puppeteer';
+export * from './types';
 export { default } from './middleware/pdf';

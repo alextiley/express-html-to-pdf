@@ -1,6 +1,7 @@
 import { Response } from 'express';
 import defaultsDeep from 'lodash/fp/defaultsDeep';
 import { generatePDF } from '../helpers/pdf';
+import { HTMLToPDFOptions } from '../types';
 import debug from '../helpers/debug';
 
 const defaultOptions: HTMLToPDFOptions = {

@@ -1,4 +1,6 @@
 import { handlePDF } from '../handlers/pdf';
+import { HTMLToPDFOptions } from '../types';
+import { RequestHandler } from 'express';
 
 // Augment express response object to allow support for res.pdf()
 declare global {
@@ -9,7 +11,7 @@ declare global {
   }
 }
 
-const middleware: HTMLToPDFMiddleware = (req, res, next) => {
+const middleware: RequestHandler = (req, res, next) => {
   res.pdf = handlePDF;
   next();
 };

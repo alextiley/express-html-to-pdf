@@ -1,5 +1,4 @@
 {
-  "extends": "./tsconfig.json",
   "compilerOptions": {
     "declaration": true,
     "outDir": "./lib"
@@ -9,5 +8,6 @@
     "**/__fixtures__/*",
     "**/__tests__/*",
     "**/examples/*"
-  ]
+  ],
+  "extends": "./tsconfig.json"
 }
