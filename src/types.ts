@@ -21,5 +21,4 @@ declare module 'express-html-to-pdf' {
       }
     }
   }
-  export default ExpressHTMLToPDFMiddleware;
 }
