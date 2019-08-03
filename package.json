@@ -1,7 +1,7 @@
 {
   "name": "express-html-to-pdf",
   "description": "Convert HTML to PDF using express, the node.js framework",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "license": "MIT",
