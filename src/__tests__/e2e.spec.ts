@@ -1,19 +1,10 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import PDFParser from 'pdf2json';
 import puppeteer from 'puppeteer';
 import request from 'supertest';
 import basicMarkup from '../__fixtures__/basic';
 import complexMarkup from '../__fixtures__/complex';
 import googleWebFontMarkup from '../__fixtures__/webfont';
-import { ExpressPDFOptions } from '../types';
-
-declare global {
-  namespace Express {
-    export interface Response {
-      pdf: (html: string, options?: ExpressPDFOptions) => void;
-    }
-  }
-}
 
 type PDFResponse = {
   body: Buffer;
@@ -33,7 +24,7 @@ describe('e2e tests', () => {
   it('should send a PDF to the browser when response.pdf is invoked with basic HTML', async (done) => {
     expect.assertions(5);
 
-    app.get('/pdf', (req, res) => {
+    app.get('/pdf', (req: Request, res: Response) => {
       res.pdf(basicMarkup);
     });
 
@@ -62,7 +53,7 @@ describe('e2e tests', () => {
   it('should send a PDF to the browser when response.pdf is invoked with HTML and CSS that requires assets over the network', async (done) => {
     expect.assertions(11);
 
-    app.get('/pdf', (req, res) => {
+    app.get('/pdf', (req: Request, res: Response) => {
       res.pdf(googleWebFontMarkup, {
         waitForNetworkIdle: true,
       });
@@ -99,7 +90,7 @@ describe('e2e tests', () => {
   it('should send a PDF to the browser when response.pdf is invoked with complex HTML and CSS', async (done) => {
     expect.assertions(3);
 
-    app.get('/pdf', (req, res) => {
+    app.get('/pdf', (req: Request, res: Response) => {
       res.pdf(complexMarkup);
     });
 

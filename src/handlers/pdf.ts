@@ -20,7 +20,7 @@ export async function handlePDF(
   this: Response,
   html: string,
   userOptions: ExpressPDFOptions = {}
-) {
+): Promise<Response> {
   const options = defaultsDeep(defaultOptions, userOptions);
 
   debug('Configuration successfully parsed:');
