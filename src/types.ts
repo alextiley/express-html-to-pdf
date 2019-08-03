@@ -13,12 +13,8 @@ type ExpressHTMLToPDFMiddleware = (
   next: import('express').NextFunction
 ) => void;
 
-declare module 'express-html-to-pdf' {
-  global {
-    namespace Express {
-      interface Response {
-        pdf: (html: string, options?: ExpressPDFOptions) => Promise<this>;
-      }
-    }
+declare namespace Express {
+  interface Response {
+    pdf: (html: string, options?: ExpressPDFOptions) => Promise<this>;
   }
 }
