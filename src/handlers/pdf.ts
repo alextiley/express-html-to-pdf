@@ -3,7 +3,7 @@ import defaultsDeep from 'lodash/fp/defaultsDeep';
 import { generatePDF } from '../helpers/pdf';
 import debug from '../helpers/debug';
 
-const defaultOptions: ExpressPDFOptions = {
+const defaultOptions: HTMLToPDFOptions = {
   browserOptions: {
     args: ['--font-render-hinting=none'],
   },
@@ -19,7 +19,7 @@ const defaultOptions: ExpressPDFOptions = {
 export async function handlePDF(
   this: Response,
   html: string,
-  userOptions: ExpressPDFOptions = {}
+  userOptions: HTMLToPDFOptions = {}
 ): Promise<Response> {
   const options = defaultsDeep(defaultOptions, userOptions);
 

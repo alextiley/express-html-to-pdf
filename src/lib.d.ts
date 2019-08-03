@@ -1,4 +1,4 @@
-interface ExpressPDFOptions {
+interface HTMLToPDFOptions {
   disposition?: 'inline' | 'attachment';
   filename?: string;
   browserOptions?: import('puppeteer').LaunchOptions;
@@ -7,14 +7,8 @@ interface ExpressPDFOptions {
   waitForNetworkIdle?: boolean;
 }
 
-type ExpressHTMLToPDFMiddleware = (
+type HTMLToPDFMiddleware = (
   request: import('express').Request,
   response: import('express').Response,
   next: import('express').NextFunction
 ) => void;
-
-declare module Express {
-  interface Response {
-    pdf: (html: string, options?: ExpressPDFOptions) => Promise<this>;
-  }
-}

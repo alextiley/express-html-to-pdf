@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "strict": true,
     "baseUrl": "./",
+    "esModuleInterop": true,
+    "module": "commonjs",
     "paths": {
       "*": [
         "src/typings/*"
       ]
     },
-    "esModuleInterop": true
+    "strict": true,
+    "target": "es5"
   }
 }
