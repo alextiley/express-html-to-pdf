@@ -7,6 +7,12 @@ interface ExpressPDFOptions {
   waitForNetworkIdle?: boolean;
 }
 
+type ExpressHTMLToPDFMiddleware = (
+  request: import('express').Request,
+  response: import('express').Response,
+  next: import('express').NextFunction
+) => void;
+
 declare module 'express-html-to-pdf' {
   global {
     namespace Express {
@@ -15,4 +21,5 @@ declare module 'express-html-to-pdf' {
       }
     }
   }
+  export default ExpressHTMLToPDFMiddleware;
 }

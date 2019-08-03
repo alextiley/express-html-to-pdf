@@ -1,7 +1,8 @@
-import { NextFunction, Request, Response } from 'express';
 import { handlePDF } from '../handlers/pdf';
 
-export default (req: Request, res: Response, next: NextFunction): void => {
+const middleware: ExpressHTMLToPDFMiddleware = (req, res, next) => {
   res.pdf = handlePDF;
   next();
 };
+
+export default middleware;
