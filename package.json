@@ -23,6 +23,9 @@
     "pdf-from-html",
     "node",
     "nodejs",
+    "express",
+    "expressjs",
+    "express.js",
     "javascript",
     "typescript",
     "ts",
@@ -58,6 +61,7 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
+    "convert-html-to-pdf": "^1.0.1",
     "debug": "^4.1.1",
     "lodash": "^4.17.15",
     "puppeteer": "^1.19.0"

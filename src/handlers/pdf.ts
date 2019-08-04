@@ -1,8 +1,8 @@
 import { Response } from 'express';
 import defaultsDeep from 'lodash/fp/defaultsDeep';
-import { generatePDF } from '../helpers/pdf';
 import { HTMLToPDFOptions } from '../types';
 import debug from '../helpers/debug';
+import HTMLToPDF from 'convert-html-to-pdf';
 
 const defaultOptions: HTMLToPDFOptions = {
   browserOptions: {
@@ -28,7 +28,7 @@ export async function handlePDF(
   debug('%O', options);
 
   try {
-    const pdf = await generatePDF(html, options);
+    const pdf = await new HTMLToPDF(html, options).convert();
 
     debug(`${options.filename} successfully generated.`);
 
