@@ -6,7 +6,7 @@ import HTMLToPDF from 'convert-html-to-pdf';
 
 const defaultOptions: HTMLToPDFOptions = {
   browserOptions: {
-    args: ['--font-render-hinting=none'],
+    args: ['--font-render-hinting=none','--no-sandbox'],
   },
   disposition: 'inline',
   errorBody: 'Unable to generate PDF',
