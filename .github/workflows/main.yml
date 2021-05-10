@@ -7,7 +7,7 @@ on:
 jobs:
   ci:
     runs-on: ubuntu-latest
-    container: node:14.16.1-browsers
+    container: circleci/node:14.16.1-browsers
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v2
