@@ -7,7 +7,10 @@ on:
 jobs:
   ci:
     runs-on: ubuntu-latest
-    container: circleci/node:14.16.1-browsers
+    container: 
+      image: circleci/node:14.16.1-browsers
+      volumes:
+        - volume:/volume
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v2
