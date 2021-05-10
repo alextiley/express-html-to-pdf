@@ -7,12 +7,12 @@ on:
 jobs:
   ci:
     runs-on: ubuntu-latest
-    container: circleci/node:12.16-browsers
+    container: node:14.16.1-browsers
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v2
       with:
-        node-version: '14'
+        node-version: '14.16.1'
     - name: Dependencies
       run: yarn
     - name: Test
