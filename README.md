@@ -2,6 +2,10 @@
 
 Adds support for converting HTML to PDF via express.js.
 
+### Project Status
+
+The express-html-to-pdf project is no longer actively maintained, and users are advised that continued use may expose applications to unpatched security vulnerabilities. Recommended alternatives for HTML-to-PDF conversion include Puppeteer, Playwright, or client-side libraries like jsPDF. 
+
 ### Features
 
 * Converts HTML to PDF by exposing a handy `pdf` method on the Express Response object.
